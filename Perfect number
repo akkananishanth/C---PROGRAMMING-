@@ -1,0 +1,37 @@
+#include<stdio.h>  
+#include<conio.h>  
+int main()  
+{  
+   int isPerfect(int n) {
+  int sum = 0;
+  
+  for (int i = 1; i * i <= n; i++) {
+  
+    if (n % i == 0) {
+   
+      sum += i;
+      
+      if (i != n / i) {
+        
+        sum += n / i;
+      }
+    }
+  }
+  sum -= n;
+  
+  return (sum == n);
+}
+
+
+int main() {
+  
+  int num1 = 6;
+  int num2 = 28;
+  int num3 = 15;
+
+  printf("%d is %s\n", num1, isPerfect(num1) ? "perfect" : "not perfect");
+  printf("%d is %s\n", num2, isPerfect(num2) ? "perfect" : "not perfect");
+  printf("%d is %s\n", num3, isPerfect(num3) ? "perfect" : "not perfect");
+  
+  return 0;
+}
